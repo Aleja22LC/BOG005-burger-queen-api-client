@@ -1,25 +1,24 @@
-// import logo from './logo.svg';
-// import './App.css';
+//se realiza el ruteado
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Start } from "./Componentes/Home";
+import { FormLogin } from "./Componentes/Login";
+import { Waiter } from "./Componentes/Users";
+import { Orders } from "./Componentes/Orders";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
+export default function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Start />} />
+          <Route path="Login" element={<FormLogin />} />
+          <Route path="users" element={<Waiter />} />
+          <Route path="orders" element={<Orders />} />
+          {/* <Route path="*" element={<div>404 - not found</div>} /> */}
+          <Route path="*" element={<Navigate replace to="/" />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
