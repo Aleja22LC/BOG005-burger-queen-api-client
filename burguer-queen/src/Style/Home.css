@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    max-width: 100%;
+   max-height: 100%;
+}
+#logo-hamburguesa {
+    position: absolute;
+    width: 605px;
+    height: 900px;
+    left: 771px;
+    top: 179.56px;
+
+}
+#logo-titulo{
+    position: absolute;
+width: 265px;
+height: 93px;
+left: -12px;
+top: 0px;
+
+}
+#titulo{
+    position: absolute;
+    width: 570px;
+    height: 266px;
+    left: calc(50% - 670px/2 - 306px);
+    top: 155px;
+    font-family: 'Galada';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 208px;
+    color: #000000;
+     
+}
+#text-home {
+    position: absolute;
+    width: 536px;
+    height: 180px;
+    left: calc(50% - 636px/2 - 298px);
+    top: 487px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+#text-home-mot {
+    position: absolute;
+    width: 536px;
+    height: 266px;
+    left: calc(50% - 670px/2 - 288px);
+    top: 697px;
+    font-family: 'Galada';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 59px;
+    text-align: center;
+    color: #000000;
+    
+
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 46px;
+    gap: 10px;
+    position: absolute;
+    width: 273px;
+    height: 82px;
+    left: 377px;
+    top: 900px;
+    background: #EA0000;
+    box-shadow: 0px 17px 23px -1px rgba(255, 18, 18, 0.25);
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 31px;
+    font-family: 'Inter';
+}
+
+
