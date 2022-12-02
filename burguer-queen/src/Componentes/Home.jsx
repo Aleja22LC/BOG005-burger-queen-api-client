@@ -17,7 +17,7 @@ export function Start() {
       <h2 id="text-home-mot"> “La única forma de lograr lo imposible <br/>es creer que es posible”.</h2>
       </section>
       
-      <button className="btn" onClick={() => navigate("/Login")}>Bienvenidos</button>
+      <button className="btn" id="btn-home" onClick={() => navigate("/Login")}>Bienvenidos</button>
     </div>
   );
 };
