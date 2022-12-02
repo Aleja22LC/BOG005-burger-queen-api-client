@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
+import "../Style/Login.css";
+import logohamburguesa from "../img/logohamburguea.png"
+import logotitulo from "../img/logotitulo.png"
+import titulo from "../img/titulo.PNG"
 
 
 export function FormLogin() {
@@ -20,25 +23,30 @@ export function FormLogin() {
 
   return (
     <form onClick={handleSubmit} className="login">
+      <img className="logot" id="logotitulo" src={logotitulo} alt='logo'/>
+      <img className="logoh" id="hamburguer" src={logohamburguesa} alt='logo'/>
+      <img className="titulo" id="titulo" src={titulo} alt='logo'/>
       <section className="form-container">
         <input
           type="email"
-          placeholder="E-mail"
+          placeholder="  E-mail"
           name="username"
           value={inputs.username || ""}
           onChange={handleChange}
+          id= "inputemail"
         />
 
         <input
           type="password"
-          placeholder="Contraseña"
+          placeholder="  Contraseña"
           name="pass"
           value={inputs.pass || ""}
           onChange={handleChange}
+          id= "inputpass"
         />
 
         <section className="buttons-container">
-          <button className="btn" onClick={() => navigate("/Users")}>
+          <button className="btn" id="btn-login" onClick={() => navigate("/Users")}>
             INGRESAR
           </button>
         </section>
