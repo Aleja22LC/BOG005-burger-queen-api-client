@@ -12,6 +12,7 @@
     left: 100px;
     top: 14px;
   }
+
   #hamburguer {
     position: relative;
     width: 250px;
@@ -39,6 +40,71 @@
     font-family: "Crete Round";
     font-size: 24px;
   }
+
+  #inputemail {
+    position: relative;
+    top: 40px;
+  }
+
+  #inputpass {
+    position: relative;
+    top: 40px;
+  }
+
+  #btn-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 46px;
+    position: absolute;
+    width: 152px;
+    height: 46px;
+    left: 110px;
+    top: 720px;
+    background: #ea0000;
+    box-shadow: 0px 17px 23px -1px rgb(255 18 18 / 25%);
+    border-radius: 15px;
+    border: none;
+    color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+
+  #logotitulo {
+    position: relative;
+    width: 145px;    
+    left: 25px;
+    bottom: 600PX;
+  }
+
+  #hamburguer {
+    position: relative;
+    width: 450px;
+    left: 400px;
+    top: 60px;
+  }
+
+  #titulo {
+    position: relative;
+    width: 450px;
+    bottom: 480PX;
+    left: 60px;
+  }
+
+  input {
+    position: relative;
+    width: 284px;
+    height: 43px;
+    background: #ffffff;
+    border: 4px solid #ff9900;
+    border-radius: 15px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    font-family: "Crete Round";
+    font-size: 24px;
+  }
+
   #inputemail {
     position: relative;
     top: 40px;

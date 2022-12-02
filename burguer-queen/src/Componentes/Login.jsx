@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/Login.css";
-import logohamburguesa from "../img/logohamburguea.png"
-import logotitulo from "../img/logotitulo.png"
-import titulo from "../img/titulo.PNG"
-
+import logohamburguesa from "../img/logohamburguea.png";
+import logotitulo from "../img/logotitulo.png";
+import titulo from "../img/titulo.PNG";
 
 export function FormLogin() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
+  const baseUrl = "http://localhost:8080";
 
   const handleChange = (event) => {
     const name = event.target.name;

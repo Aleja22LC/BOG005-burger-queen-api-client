@@ -11,10 +11,10 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Start />} />
-          <Route path="Login" element={<FormLogin />} />
-          <Route path="users" element={<Waiter />} />
-          <Route path="orders" element={<Orders />} />
+          <Route exact path="/" element={<Start />} />
+          <Route exact path="Login" element={<FormLogin />} />
+          <Route exact path="users" element={<Waiter />} />
+          <Route exact path="orders" element={<Orders />} />
           {/* <Route path="*" element={<div>404 - not found</div>} /> */}
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
