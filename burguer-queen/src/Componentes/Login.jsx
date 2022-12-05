@@ -4,11 +4,12 @@ import "../Style/Login.css";
 import logohamburguesa from "../img/logohamburguea.png";
 import logotitulo from "../img/logotitulo.png";
 import titulo from "../img/titulo.PNG";
-
+import { loginUsers } from "../helpers/axios";
 export function FormLogin() {
+  
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
-  const baseUrl = "http://localhost:8080";
+  
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -20,7 +21,22 @@ export function FormLogin() {
     event.preventDefault();
     console.log(inputs);
   };
-
+function handleClick() {
+  loginUsers("grace.hopper@systers.xyz","123456")
+  .then((res)=>{
+    //colocar que evalue 
+    if 
+      (res.data.user.role =="admin" )    {
+        console.log('RESULTADO', res)
+        navigate("/Users")
+      }
+    
+  })
+  .catch(()=>{
+    console.log('error credenciales')
+  })
+  
+}
   return (
     <form onClick={handleSubmit} className="login">
       <img className="logot" id="logotitulo" src={logotitulo} alt='logo'/>
@@ -38,7 +54,7 @@ export function FormLogin() {
 
         <input
           type="password"
-          placeholder="  Contraseña"
+          placeholder="Contraseña"
           name="pass"
           value={inputs.pass || ""}
           onChange={handleChange}
@@ -46,7 +62,7 @@ export function FormLogin() {
         />
 
         <section className="buttons-container">
-          <button className="btn" id="btn-login" onClick={() => navigate("/Users")}>
+          <button className="btn" id="btn-login" onClick={handleClick}>
             INGRESAR
           </button>
         </section>
