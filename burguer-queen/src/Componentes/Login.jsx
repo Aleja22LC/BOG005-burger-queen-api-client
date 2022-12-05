@@ -8,7 +8,7 @@ import titulo from "../img/titulo.PNG";
 export function FormLogin() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
-  const baseUrl = "http://localhost:8080";
+  // const baseUrl = "http://localhost:8080";
 
   const handleChange = (event) => {
     const name = event.target.name;
