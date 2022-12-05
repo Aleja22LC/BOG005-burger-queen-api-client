@@ -26,7 +26,7 @@ function handleClick() {
   .then((res)=>{
     //colocar que evalue 
     if 
-      (res.data.user.role =="admin" )    {
+      (res.data.user.role === "admin" )    {
         console.log('RESULTADO', res)
         navigate("/Users")
       }
