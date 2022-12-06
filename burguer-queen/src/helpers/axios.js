@@ -13,8 +13,7 @@ export const loginUsers = async (email, password) => {
           password: password
       }
   })
+  return rest
 }
- 
-
 
 console.log(loginUsers)
