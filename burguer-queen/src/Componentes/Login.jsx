@@ -10,12 +10,7 @@ import { loginUsers } from "../helpers/axios";
 export function FormLogin() {
 
   const navigate = useNavigate();
-  const [inputs, setInputs] = useState({});
-  const data = {
-    email: email,
-    password: password,
-  };
-
+  const [inputs, setInputs] = useState({username:"", pass: ""});  
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -27,24 +22,27 @@ export function FormLogin() {
     event.preventDefault();
     console.log(inputs);
   };
+
   function handleClick() {
-    loginUsers("grace.hopper@systers.xyz","123456")
-    .then((res)=>{
-      //colocar que evalue 
-      if 
-        (res.data.user.role === "admin" )    {
-          console.log('RESULTADO', res)
-          navigate("/Users")
-        }
-      
-    })
-    .catch(()=>{
-      console.log('error credenciales')
-    })
+  if (inputs.username === ""){
+    //alerta
+    return 
+  }
+  loginUsers(inputs.username,inputs.pass)
+  .then((res)=>{
+    //colocar que evalue 
+    if (res.data.user.role === "mesero" )    {
+        console.log('RESULTADO', res)
+        navigate("/Users")
+      }
     
-  }
+  })
+  .catch(()=>{
+    console.log('error credenciales')
+  })
   
-  }
+}
+
   return (
     <form onClick={handleSubmit} className="login">
       <img className="logot" id="logotitulo" src={logotitulo} alt='logo' />
