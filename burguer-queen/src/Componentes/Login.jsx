@@ -8,8 +8,7 @@ import { loginUsers } from "../helpers/axios";
 export function FormLogin() {
   
   const navigate = useNavigate();
-  const [inputs, setInputs] = useState({});
-  
+  const [inputs, setInputs] = useState({username:"", pass: ""});  
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -21,12 +20,16 @@ export function FormLogin() {
     event.preventDefault();
     console.log(inputs);
   };
-function handleClick() {
-  loginUsers("grace.hopper@systers.xyz","123456")
+
+  function handleClick() {
+  if (inputs.username === ""){
+    //alerta
+    return 
+  }
+  loginUsers(inputs.username,inputs.pass)
   .then((res)=>{
     //colocar que evalue 
-    if 
-      (res.data.user.role === "admin" )    {
+    if (res.data.user.role === "mesero" )    {
         console.log('RESULTADO', res)
         navigate("/Users")
       }
