@@ -5,8 +5,10 @@ import logohamburguesa from "../img/logohamburguea.png";
 import logotitulo from "../img/logotitulo.png";
 import titulo from "../img/titulo.PNG";
 import { loginUsers } from "../helpers/axios";
+
+
 export function FormLogin() {
-  
+
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({username:"", pass: ""});  
 
@@ -40,11 +42,12 @@ export function FormLogin() {
   })
   
 }
+
   return (
     <form onClick={handleSubmit} className="login">
-      <img className="logot" id="logotitulo" src={logotitulo} alt='logo'/>
-      <img className="logoh" id="hamburguer" src={logohamburguesa} alt='logo'/>
-      <img className="titulo" id="titulo" src={titulo} alt='logo'/>
+      <img className="logot" id="logotitulo" src={logotitulo} alt='logo' />
+      <img className="logoh" id="hamburguer" src={logohamburguesa} alt='logo' />
+      <img className="titulo" id="titulo" src={titulo} alt='logo' />
       <section className="form-container">
         <input
           type="email"
@@ -52,7 +55,7 @@ export function FormLogin() {
           name="username"
           value={inputs.username || ""}
           onChange={handleChange}
-          id= "inputemail"
+          id="inputemail"
         />
 
         <input
@@ -61,7 +64,7 @@ export function FormLogin() {
           name="pass"
           value={inputs.pass || ""}
           onChange={handleChange}
-          id= "inputpass"
+          id="inputpass"
         />
 
         <section className="buttons-container">

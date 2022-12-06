@@ -13,6 +13,9 @@ export function Waiter() {
         <img className="logot" id="logotitulo" src={logotitulo} alt='logo' />
       </header>
       <section className="navWaiter">
+      <section>
+       <h2>Agrega Productos al Pedido</h2> 
+      </section>
 
         <h1 className="waiterView">Agrega Productos al Pedido</h1>
         <button className="btn" onClick={() => navigate("/Home")}>Salir</button>

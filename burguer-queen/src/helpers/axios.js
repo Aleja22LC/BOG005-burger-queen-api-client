@@ -1,6 +1,9 @@
 import axios from 'axios';
 // import { useState, useEffect } from "react";
 const baseUrl = "http://localhost:8080";
+let token = localStorage.getItem('tokenUser')
+let userId = localStorage.getItem('userId')
+
 export const loginUsers = async (email, password) => {
   const rest = await axios({
       method: 'POST',
@@ -10,29 +13,8 @@ export const loginUsers = async (email, password) => {
           password: password
       }
   })
-  return rest
 }
-console.log(loginUsers)
-// function loginUsers() {
-//   const [email,setEmail] = useState([])
-  
-  
-//   useEffect(() => {
-    
-//     const obtenerCorreos = async () => {
-//       const url = 'http://localhost:8080/';
-//       const result = await axios.get(url);
-//       // console.log(result.data)
-//       setEmail(result.data)
-//     }
-//     console.log(setEmail)
-//     obtenerCorreos()
-//   },  []);
-  
+ 
 
-// return (
-//   <div>
-//     <h1>loginUsers</h1>
-//     </div>
-//   );
-// };
+
+console.log(loginUsers)
