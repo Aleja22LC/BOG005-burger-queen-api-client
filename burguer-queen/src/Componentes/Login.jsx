@@ -5,11 +5,17 @@ import logohamburguesa from "../img/logohamburguea.png";
 import logotitulo from "../img/logotitulo.png";
 import titulo from "../img/titulo.PNG";
 import { loginUsers } from "../helpers/axios";
+
+
 export function FormLogin() {
-  
+
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
-  
+  const data = {
+    email: email,
+    password: password,
+  };
+
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -21,27 +27,29 @@ export function FormLogin() {
     event.preventDefault();
     console.log(inputs);
   };
-function handleClick() {
-  loginUsers("grace.hopper@systers.xyz","123456")
-  .then((res)=>{
-    //colocar que evalue 
-    if 
-      (res.data.user.role === "admin" )    {
-        console.log('RESULTADO', res)
-        navigate("/Users")
-      }
+  function handleClick() {
+    loginUsers("grace.hopper@systers.xyz","123456")
+    .then((res)=>{
+      //colocar que evalue 
+      if 
+        (res.data.user.role === "admin" )    {
+          console.log('RESULTADO', res)
+          navigate("/Users")
+        }
+      
+    })
+    .catch(()=>{
+      console.log('error credenciales')
+    })
     
-  })
-  .catch(()=>{
-    console.log('error credenciales')
-  })
+  }
   
-}
+  }
   return (
     <form onClick={handleSubmit} className="login">
-      <img className="logot" id="logotitulo" src={logotitulo} alt='logo'/>
-      <img className="logoh" id="hamburguer" src={logohamburguesa} alt='logo'/>
-      <img className="titulo" id="titulo" src={titulo} alt='logo'/>
+      <img className="logot" id="logotitulo" src={logotitulo} alt='logo' />
+      <img className="logoh" id="hamburguer" src={logohamburguesa} alt='logo' />
+      <img className="titulo" id="titulo" src={titulo} alt='logo' />
       <section className="form-container">
         <input
           type="email"
@@ -49,7 +57,7 @@ function handleClick() {
           name="username"
           value={inputs.username || ""}
           onChange={handleChange}
-          id= "inputemail"
+          id="inputemail"
         />
 
         <input
@@ -58,7 +66,7 @@ function handleClick() {
           name="pass"
           value={inputs.pass || ""}
           onChange={handleChange}
-          id= "inputpass"
+          id="inputpass"
         />
 
         <section className="buttons-container">
