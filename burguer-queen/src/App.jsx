@@ -5,7 +5,7 @@ import { Start } from "./Componentes/Home";
 import { FormLogin } from "./Componentes/Login";
 import { Waiter } from "./Componentes/Users";
 import { Orders } from "./Componentes/Orders";
-
+import { MenuBreackFast } from "./Componentes/Menubreackfast";
 export default function App() {
   return (
     <>
@@ -14,6 +14,7 @@ export default function App() {
           <Route exact path="/" element={<Start />} />
           <Route exact path="Login" element={<FormLogin />} />
           <Route exact path="users" element={<Waiter />} />
+          <Route exact path="MenuBreackFast" element={<MenuBreackFast />} />
           <Route exact path="orders" element={<Orders />} />
           {/* <Route path="*" element={<div>404 - not found</div>} /> */}
           <Route path="*" element={<Navigate replace to="/" />} />

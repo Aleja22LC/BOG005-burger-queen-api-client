@@ -37,7 +37,7 @@ export function FormLogin() {
         //colocar que evalue 
         if (res.data.user.role === "mesero") {
           swal({
-            title: 'Ingreso exitoso!',
+            title:'Ingreso exitoso!',
             icon: 'success',
             timer: '2000'
           })
@@ -51,7 +51,7 @@ export function FormLogin() {
         if (res.response.data === 'Email and password are required') {
           swal({
             icon: 'warning',
-            title: 'Oops...',
+            title: 'Error',
             text: 'Ingresa tu contraseña!',
             timer: '2000'            
           })
@@ -78,7 +78,7 @@ export function FormLogin() {
         else if (res.response.data === 'Incorrect password') {
           swal({
             icon: 'warning',
-            title: 'Contraseña Invalida',
+            title: 'Contraseña Inválida',
             text: 'Verifique su contraseña!',
             timer: '3000'            
           })
