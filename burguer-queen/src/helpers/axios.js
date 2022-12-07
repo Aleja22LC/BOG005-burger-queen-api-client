@@ -15,7 +15,5 @@ export const loginUsers = async (email, password) => {
   })
   return rest
 }
- 
-
 
 console.log(loginUsers)
