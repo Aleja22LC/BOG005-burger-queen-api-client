@@ -8,9 +8,8 @@ import { loginUsers } from "../helpers/axios";
 
 
 export function FormLogin() {
-
   const navigate = useNavigate();
-  const [inputs, setInputs] = useState({username:"", pass: ""});  
+  const [inputs, setInputs] = useState({ username: "", pass: "" });
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -24,24 +23,38 @@ export function FormLogin() {
   };
 
   function handleClick() {
-  if (inputs.username === ""){
-    //alerta
-    return 
+    if (inputs.username === "") {
+      alert("Debes registrarte para ingresar al sistema")
+      return
+    }
+    loginUsers(inputs.username, inputs.pass)
+      .then((res) => {
+        //colocar que evalue 
+        if (res.data.user.role === "mesero") {
+          console.log('RESULTADO', res)
+          navigate("/Users")
+        }
+
+      })
+      .catch((res) => {
+        // 
+        if (res.response.data === 'Email and password are required') {
+          alert('Ingresa tu contraseña ')
+        }
+        else if (res.response.data === 'Cannot find user') {
+          alert("Usuario no autorizado para ingresar en el sistema")
+        }
+        else if (res.response.data === 'Email format is invalid') {
+          alert('Ingresa email valido')
+        }
+        else if (res.response.data === 'Incorrect password') {
+          alert('Contraseña invalida')
+        }
+        else if (res.response.data === 'Password is too short') {
+          alert('Introduce contraseña valida')
+        }
+      })
   }
-  loginUsers(inputs.username,inputs.pass)
-  .then((res)=>{
-    //colocar que evalue 
-    if (res.data.user.role === "mesero" )    {
-        console.log('RESULTADO', res)
-        navigate("/Users")
-      }
-    
-  })
-  .catch(()=>{
-    console.log('error credenciales')
-  })
-  
-}
 
   return (
     <form onClick={handleSubmit} className="login">
@@ -75,6 +88,5 @@ export function FormLogin() {
       </section>
     </form>
   );
-};
 
-
+}

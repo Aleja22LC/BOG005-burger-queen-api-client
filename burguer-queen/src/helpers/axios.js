@@ -1,8 +1,8 @@
 import axios from 'axios';
 // import { useState, useEffect } from "react";
 const baseUrl = "http://localhost:8080";
-let token = localStorage.getItem('tokenUser')
-let userId = localStorage.getItem('userId')
+// let token = localStorage.getItem('tokenUser')
+// let userId = localStorage.getItem('userId')
 
 export const loginUsers = async (email, password) => {
   const rest = await axios({
@@ -13,6 +13,7 @@ export const loginUsers = async (email, password) => {
           password: password
       }
   })
+  return rest
 }
  
 
