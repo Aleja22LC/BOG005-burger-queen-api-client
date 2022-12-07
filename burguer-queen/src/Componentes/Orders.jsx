@@ -7,7 +7,7 @@ export function Orders() {
   return (
     <div>
       <h1 className="ordersView">Estado de  Pedidos</h1>
-      <button className="btn" onClick={() => navigate("/Users")}>Salir</button>
+      <button className="btn" onClick={() => navigate("/Users")}>Volver</button>
       
     </div>
   );

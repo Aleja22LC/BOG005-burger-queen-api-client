@@ -2,26 +2,30 @@
 import { useNavigate } from "react-router-dom";
 import "../Style/Users.css";
 import logotitulo from "../img/logotitulo.png";
-
+import line from "../img/line.png";
 
 export function Waiter() {
   const navigate = useNavigate();
 
   return (
-    <section>
+    <main className="users">
       <header>
-        <img className="logot" id="logotitulo" src={logotitulo} alt='logo' />
+        <img className="logot" id="logotituloUser" src={logotitulo} alt='logo' />
       </header>
       <section className="navWaiter">
-      <section>
-       <h2>Agrega Productos al Pedido</h2> 
+      <button  id="btn-exit" onClick={() => navigate("/Home")}>Salir</button>
+      <img className="line" id="linered" src={line} alt='inea' />
+        <section className="titleWaiter">
+          <h1 id="waiterView">Agrega Productos al Pedido</h1>
+        </section>
+        <section className="btn-menu">
+        <button id="btn-breakfast" onClick={() => alert('Aquí menú Desayuno')}>Desayuno</button>
+        <button id="btn-lunch"  onClick={() => alert('Aquí menú Almuerzo y Cena')}>Almuerzo y Cena</button>
+          </section>    
+        
+        <button className="btn" id="btn-orders" onClick={() => navigate("/Orders")}>Pedidos</button>
       </section>
-
-        <h1 className="waiterView">Agrega Productos al Pedido</h1>
-        <button className="btn" onClick={() => navigate("/Home")}>Salir</button>
-        <button className="btn" onClick={() => navigate("/Orders")}>Pedidos</button>
-      </section>
-    </section>
+    </main>
   );
 };
 

@@ -5,7 +5,7 @@ import logohamburguesa from "../img/logohamburguea.png";
 import logotitulo from "../img/logotitulo.png";
 import titulo from "../img/titulo.PNG";
 import { loginUsers } from "../helpers/axios";
-
+import swal from 'sweetalert';
 
 export function FormLogin() {
   const navigate = useNavigate();
@@ -24,13 +24,23 @@ export function FormLogin() {
 
   function handleClick() {
     if (inputs.username === "") {
-      alert("Debes registrarte para ingresar al sistema")
+      swal({
+        title: 'Ingresar e-mail y contraseña, para entrar al sistema',
+        icon: 'warning',
+        timer: '2000'
+      })
+
       return
     }
     loginUsers(inputs.username, inputs.pass)
       .then((res) => {
         //colocar que evalue 
         if (res.data.user.role === "mesero") {
+          swal({
+            title: 'Ingreso exitoso!',
+            icon: 'success',
+            timer: '2000'
+          })
           console.log('RESULTADO', res)
           navigate("/Users")
         }
@@ -39,19 +49,49 @@ export function FormLogin() {
       .catch((res) => {
         // 
         if (res.response.data === 'Email and password are required') {
-          alert('Ingresa tu contraseña ')
+          swal({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingresa tu contraseña!',
+            timer: '2000'            
+          })
+          // alert('Ingresa tu contraseña ')
         }
         else if (res.response.data === 'Cannot find user') {
-          alert("Usuario no autorizado para ingresar en el sistema")
+          swal({
+            icon: 'warning',
+            title: 'Usuario no autorizado para ingresar en el sistema',
+            text: 'Verifique su usuario y contraseña.',
+            timer: '3500'            
+          })
+          // alert("Usuario no autorizado para ingresar en el sistema")
         }
         else if (res.response.data === 'Email format is invalid') {
-          alert('Ingresa email valido')
+          swal({
+            icon: 'warning',
+            title: 'E-mail no valido!',
+            text: 'Ingresa un e-mail valido.',
+            timer: '3500'            
+          })
+          // alert('Ingresa email valido')
         }
         else if (res.response.data === 'Incorrect password') {
-          alert('Contraseña invalida')
+          swal({
+            icon: 'warning',
+            title: 'Contraseña Invalida',
+            text: 'Verifique su contraseña!',
+            timer: '3000'            
+          })
+          // alert('Contraseña invalida')
         }
         else if (res.response.data === 'Password is too short') {
-          alert('Introduce contraseña valida')
+          swal({
+            icon: 'warning',
+            title: 'Contraseña Debil',
+            text: 'Introduzca contraseña valida!',
+            timer: '3000'            
+          })
+          // alert('Introduce contraseña valida')
         }
       })
   }
@@ -73,7 +113,7 @@ export function FormLogin() {
 
         <input
           type="password"
-          placeholder="Contraseña"
+          placeholder=" Contraseña"
           name="pass"
           value={inputs.pass || ""}
           onChange={handleChange}

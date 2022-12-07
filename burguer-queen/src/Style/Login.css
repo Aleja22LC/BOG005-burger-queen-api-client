@@ -30,7 +30,7 @@
 
   input {
     position: relative;
-    width: 284px;
+    width: 264px;
     height: 43px;
     background: #ffffff;
     border: 4px solid #ff9900;
@@ -69,25 +69,25 @@
   }
 }
 
-@media screen and (min-width: 640px) and (max-width: 1280px) and (orientation: landscape) {
+@media screen and (min-width: 640px) and (max-width: 1280px){
 
   #logotitulo {
     position: relative;
-    width: 145px;
-    left: 25px;
-    bottom: 600PX;
+    width: 190px;
+    left: 30px;
+    bottom: 580px;
   }
 
   #hamburguer {
     position: relative;
     width: 450px;
-    left: 400px;   
+    left: 450px;
   }
 
   #titulo {
     position: relative;
-    width: 450px;
-    bottom: 480PX;
+    width: 580px;
+    bottom: 480px;
     left: 60px;
   }
 
@@ -98,22 +98,22 @@
     background: #ffffff;
     border: 4px solid #ff9900;
     border-radius: 15px;
-    margin-left: 50px;
-    margin-bottom: 15px;
+    margin-left: 80px;
+    margin-bottom: 35px;
     font-family: "Crete Round";
-    font-size: 24px;
+    font-size: 24px;    
   }
 
   #inputemail {
     position: relative;
-    bottom: 400px;
-    left: 95px;
+    bottom: 450px;
+    left: 130px;
   }
 
   #inputpass {
     position: relative;
-    bottom: 320px;
-    left: -245px;  
+    bottom: 380px;
+    left: -242px;
   }
 
   #btn-login {
@@ -124,8 +124,8 @@
     position: absolute;
     width: 152px;
     height: 46px;
-    left: 210px;
-    bottom: 100px;
+    left: 275px;
+    bottom: 170px;
     background: #ea0000;
     box-shadow: 0px 17px 23px -1px rgb(255 18 18 / 25%);
     border-radius: 15px;
@@ -140,22 +140,23 @@
     position: relative;
     width: 200px;
     left: 25px;
-    bottom: 670PX;
+    bottom: 670px;
   }
 
   #hamburguer {
     position: relative;
     width: 500px;
+    height: 750px;
     left: 550px;
-    top: 40px;
+    bottom: 10px;
   }
 
   #titulo {
     position: relative;
     width: 650px;
     height: 250px;
-    top: -640PX;
-    left: 70px;;
+    right: 610px;
+    bottom: 400px;
     
   }
 
@@ -166,22 +167,21 @@
     background: #ffffff;
     border: 4px solid #ff9900;
     border-radius: 15px;
-    margin-left: 50px;
-    margin-bottom: 15px;
+    margin-left: 50px;    
     font-family: "Crete Round";
     font-size: 24px;
   }
 
   #inputemail {
     position: relative;
-    bottom: 580px;
+    bottom: 380px;
     left: 200px;
   }
 
   #inputpass {
     position: relative;
-    bottom: 500px;
-    left: -142px;    
+    bottom: 300px;
+    left: -142px;
   }
 
   #btn-login {
@@ -193,11 +193,12 @@
     width: 152px;
     height: 46px;
     left: 315px;
-    bottom: 70px;
+    bottom: 120px;
     background: #ea0000;
     box-shadow: 0px 17px 23px -1px rgb(255 18 18 / 25%);
     border-radius: 15px;
     border: none;
-    color: #ffffff
+    color: #ffffff;
+    font-size: 18px;
   }
 }
