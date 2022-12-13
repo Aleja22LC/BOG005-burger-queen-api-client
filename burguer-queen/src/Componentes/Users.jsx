@@ -16,7 +16,7 @@ export function Waiter() {
       </header>
       <section className="navWaiter">
       <button  id="btn-exit" onClick={() => navigate("/Home")}>Salir</button>
-      <img className="line" id="linered" src={line} alt='inea' />
+      <img className="line" id="linered" src={line} alt='line' />
         <section className="titleWaiter">
           <h1 id="waiterView">Agrega Productos al Pedido</h1>
         </section>

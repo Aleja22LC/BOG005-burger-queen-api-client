@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 export function FormLogin() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({ username: "", pass: "" });
-
+  
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -67,6 +67,7 @@ export function FormLogin() {
           // alert("Usuario no autorizado para ingresar en el sistema")
         }
         else if (res.response.data === 'Email format is invalid') {
+          
           swal({
             icon: 'warning',
             title: 'E-mail no valido!',

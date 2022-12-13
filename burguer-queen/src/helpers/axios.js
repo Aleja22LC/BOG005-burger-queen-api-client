@@ -11,9 +11,27 @@ export const loginUsers = async (email, password) => {
       data: {
           email: email,
           password: password
-      }
+      }      
   })
+  
   return rest
+ 
 }
-
 console.log(loginUsers)
+const token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlLmhvcHBlckBzeXN0ZXJzLnh5eiIsImlhdCI6MTY1MDIzMzkwOSwiZXhwIjoxNjUwMjM3NTA5LCJzdWIiOiIyIn0.nS99u-MBatZHbexMUenwsGdS8oV55BIaGwI6PSP7BC8
+
+export const listProducts = async (product,name) =>{
+  const res = await axios({
+    
+    method:'GET',
+    url: baseUrl + '/ListProduct',
+        data: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        }
+})
+return res.data 
+}  
+  
+  
+  
