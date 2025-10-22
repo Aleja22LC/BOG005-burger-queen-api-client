@@ -1,3 +1,5 @@
+<img width="1087" height="587" alt="image" src="https://github.com/user-attachments/assets/647afbd5-57cf-472f-b4e8-b229840425df" />
+
 # Burger Queen (API Client)
 
 ## Índice
